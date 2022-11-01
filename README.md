@@ -1,31 +1,26 @@
-# ETUDE DE CAS - VALEURS FONCIERES
+# REAL ESTATE VALUE ESTIMATION
 
-Ce code contient une analyse préliminaire sur les données de mutation, dont le but est de prédire
-la valeur foncière d'un immeuble (maison ou appartement), à partir de données comme sa localisation
-et les données démographiques rélatives à son code postal.
+This code contains a preliminary analysis on the transfer data, the purpose of which is to estimate the real estate value of a building (house or apartment)
+from data such as its location and the demographic data relating to its postal code. The project was focused on the south west of France data.
 
-Il contient aussi une application avec une interface, où c'est possible de renseigner ces informations
-sur un immeuble et reçevoir une estimation de prix de vente.
+It also contains an application with an interface, where it is possible to enter this information on a building and receive a sale price estimate.
 
+# HOW TO USE THIS PROJECT
 
-# COMMENT UTILISER CE PROJET
+The Jupyter notebook already contains all the necessary information, so there is no need to run it.
 
-Le notebook Jupyter contient déjà toutes les informations nécessaires, il n'y a donc pas besoin de l'exécuter.
+To launch the application, you must first install the necessary libraries with the command $ pip install -r requirements.txt. Then, in the "app" folder, launch the application with the python app.py command. It will therefore be accessible from the URL http://localhost:5000/.
 
-Pour lancer l'application, il faut d'abourd installer les librairies nécessaires avec la commande `$ pip install -r requirements.txt`.
-Ensuite, dans le dossier "app" il faut lancer l'application avec la commande `python app.py`. Elle sera donc accessible à partir de l'URL http://localhost:5000/. 
+The application is used to estimate the value of a property (apartment or house). Once launched, to use it, you must enter the following information:
 
-L'application sert à estimer la valeur d'un bien immobilier (appartement ou maison). Une fois lancée, pour l'ustiliser, il faut
-renseigner les informations suivantes:
-- Code postal
-- Type de local (Appartement / Maison)
-- Surface réelle du bâtiment (en m2)
-- Surface du terrain (en m2)
-- Nombre de pièces principales
-- Prix cible (le prix estimé par l'agent immobilier)
+- Postal code
+- Type of premises (Apartment / House)
+- Actual building area (in m2)
+- Land area (in m2)
+- Number of main rooms
+- Target price (the price estimated by the real estate agent)
 
-
-# STRUCTURE DES FICHIERS
+# FOLDER STRUCTURE
 ```
 case_study
 │   README.md
