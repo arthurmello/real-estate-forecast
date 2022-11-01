@@ -9,7 +9,7 @@ It also contains an application with an interface, where it is possible to enter
 
 The Jupyter notebook already contains all the necessary information, so there is no need to run it.
 
-To launch the application, you must first install the necessary libraries with the command $ pip install -r requirements.txt. Then, in the "app" folder, launch the application with the python app.py command. It will therefore be accessible from the URL http://localhost:5000/.
+To launch the application, you must first install the necessary libraries with the command `$ pip install -r requirements.txt`. Then, in the "app" folder, launch the application with the python app.py command. It will therefore be accessible from the URL http://localhost:5000/.
 
 The application is used to estimate the value of a property (apartment or house). Once launched, to use it, you must enter the following information:
 
