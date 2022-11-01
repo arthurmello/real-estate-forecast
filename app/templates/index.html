@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<style>
+  html, body {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  }
+
+  body, div, h1, form, input, p , select{ 
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
+  color: #666;
+  }
+
+  h1 {
+  padding: 10px 0;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  }
+
+  p {
+  font-size: 12px;
+  }
+
+  button {
+  width: 100%;
+  padding: 10px 0;
+  margin: 10px auto;
+  border-radius: 5px; 
+  border: none;
+  background: #1c87c9; 
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  }
+
+  button:hover {
+  background: #26a9e0;
+  }
+</style>
+
+<body">
+<form action="{{ url_for("estimate_price") }}" method="post">
+<div>
+
+    <h1>Estimation de valeur foncière</h1>
+    <label for="code_postal">Code postal:</label>
+    <br>
+    <select name="code_postal" id="code_postal" required>
+        <option value="" disabled selected></option>
+        {% for z in list_cp %}
+            <option {% if code_postal == z %}
+                      selected
+                     {% endif %}
+              value="{{ z }}">{{ z }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <label for="type_local">Type de local:</label>
+    <br>
+
+    <select name="type_local" id="type_local" required>
+        <option value="" disabled selected></option>
+        {% for z in list_local %}
+            <option {% if type_local == z %}
+                      selected
+                     {% endif %}
+              value="{{ z }}">{{ z }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <label for="surface_reelle_bati">Surface réelle du bâtiment (en m2)</label>
+    <br>
+    <input type="number" name="surface_reelle_bati" required
+        value="{{ request.form['surface_reelle_bati'] }}"></input>
+    <br><br>
+
+    <label for="surface_terrain">Surface du terrain (en m2)</label>
+    <br>
+    <input type="number" name="surface_terrain" required
+        value="{{ request.form['surface_terrain'] }}"></input>
+    <br><br>
+
+    <label for="nombre_pieces_principales">Nombre de pièces principales</label>
+    <br>
+    <input type="number" name="nombre_pieces_principales" required
+        value="{{ request.form['nombre_pieces_principales'] }}"></input>
+    <br><br>
+
+    <label for="prixcible">Prix cible</label>
+    <br>
+    <input type="number" name="prixcible" required
+        value="{{ request.form['prixcible'] }}"></input>
+    <br><br>
+
+    <button type="submit">Estimer</button>
+    <br><br><br>
+
+    <b>{{ result }}</b>
+
+</div>
+
+</body>
+</html>
